@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'utils/common_widgets/invalid_route.dart';
+import 'screens/home.dart';
 import 'values/app_routes.dart';
 
 class Routes {
-  const Routes._();
+  const Routes._();//private constructor
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     Route<dynamic> getRoute({
@@ -26,6 +27,9 @@ class Routes {
 
       case AppRoutes.register:
         return getRoute(widget: const RegisterPage());
+
+      case AppRoutes.home :
+        return getRoute(widget: HomePage());
 
       /// An invalid route. User shouldn't see this,
       /// it's for debugging purpose only.

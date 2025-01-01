@@ -9,8 +9,8 @@ class AppStrings {
   static const String doNotHaveAnAccount = "Don't have an account?";
   static const String facebook = 'Facebook';
   static const String google = 'Google';
-  static const String signInToYourNAccount = 'Sign in to your\nAccount';
-  static const String signInToYourAccount = 'Sign in to your Account';
+  static const String signInToYourNAccount = 'Past Question Guide';
+  static const String signInToYourAccount = 'Please sign in to your account';
   static const String iHaveAnAccount = 'I have an account?';
   static const String forgotPassword = 'Forgot Password?';
   static const String orLoginWith = 'or Login with';

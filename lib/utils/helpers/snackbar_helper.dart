@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SnackbarHelper {
-  const SnackbarHelper._();
+  const SnackbarHelper._(); //calls the private constructor
 
   static final _key = GlobalKey<ScaffoldMessengerState>();
 
@@ -9,7 +9,7 @@ class SnackbarHelper {
 
   static void showSnackBar(String? message, {bool isError = false}) =>
       _key.currentState
-        ?..removeCurrentSnackBar()
+        ?..removeCurrentSnackBar() //check that the object is not null before calling it
         ..showSnackBar(
           SnackBar(
             content: Text(message ?? ''),

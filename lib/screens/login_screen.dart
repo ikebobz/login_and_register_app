@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
           Form(
             key: _formKey,
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(25),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -148,6 +148,8 @@ class _LoginPageState extends State<LoginPage> {
                       return FilledButton(
                         onPressed: isValid
                             ? () {
+                                NavigationHelper
+                                    .pushReplacementNamed(AppRoutes.home);
                                 SnackbarHelper.showSnackBar(
                                   AppStrings.loggedIn,
                                 );
@@ -160,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   const SizedBox(height: 20),
-                  Row(
+                  /*Row(
                     children: [
                       Expanded(child: Divider(color: Colors.grey.shade200)),
                       Padding(
@@ -200,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ],
-                  ),
+                  ),*/
                 ],
               ),
             ),
