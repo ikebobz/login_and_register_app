@@ -16,7 +16,7 @@ class LoginRegisterApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppStrings.loginAndRegister,
       theme: AppTheme.themeData,
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.splash,
       scaffoldMessengerKey: SnackbarHelper.key,
       navigatorKey: NavigationHelper.key,
       onGenerateRoute: Routes.generateRoute,

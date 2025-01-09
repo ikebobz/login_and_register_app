@@ -5,6 +5,7 @@ import 'screens/register_screen.dart';
 import 'utils/common_widgets/invalid_route.dart';
 import 'screens/home.dart';
 import 'values/app_routes.dart';
+import 'screens/splashscreen.dart';
 
 class Routes {
   const Routes._();//private constructor
@@ -29,7 +30,10 @@ class Routes {
         return getRoute(widget: const RegisterPage());
 
       case AppRoutes.home :
-        return getRoute(widget: HomePage());
+        return getRoute(widget: const HomePage());
+
+      case AppRoutes.splash :
+        return getRoute(widget: const SplashScreen());
 
       /// An invalid route. User shouldn't see this,
       /// it's for debugging purpose only.
