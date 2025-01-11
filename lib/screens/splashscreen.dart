@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_register_app/screens/home.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
+import 'package:login_register_app/screens/search.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +20,7 @@ class SplashScreenState extends State<SplashScreen> {
       // Navigate to HomeScreen after 3 seconds
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const SearchScreen()),
       );
     });
   }

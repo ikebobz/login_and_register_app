@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_register_app/screens/search.dart';
 
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
@@ -34,6 +35,11 @@ class Routes {
 
       case AppRoutes.splash :
         return getRoute(widget: const SplashScreen());
+
+      case AppRoutes.search :
+        return getRoute(widget: const SearchScreen());
+
+
 
       /// An invalid route. User shouldn't see this,
       /// it's for debugging purpose only.

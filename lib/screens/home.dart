@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_register_app/utils/helpers/snackbar_helper.dart';
-
-import '../components/app_text_form_field.dart';
-import '../utils/common_widgets/gradient_background.dart';
-import '../utils/helpers/navigation_helper.dart';
-import '../values/app_constants.dart';
-import '../values/app_regex.dart';
-import '../values/app_routes.dart';
-import '../values/app_strings.dart';
-import '../values/app_theme.dart';
-import '../values/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login_register_app/screens/customappbar.dart';
 
 class HomePage extends StatefulWidget
 {
@@ -30,31 +20,7 @@ class HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffold_key,
-      appBar: AppBar(
-          /*flexibleSpace: Container(decoration: const BoxDecoration(gradient:
-          LinearGradient(colors:AppColors.defaultGradient),),),*/
-          backgroundColor: Colors.white,
-          title: const Text('Ikenna O.',
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.blueGrey,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Arial',
-                //decoration: TextDecoration.underline,
-              ),),
-          centerTitle: true,
-          leading:IconButton(onPressed: ()  {
-            //scaffold_key.currentState?.openDrawer();
-          }, icon:
-          const Icon(Icons.person),color:Colors.blueGrey),
-          actions:[IconButton(onPressed: () => {
-            //const CustomDrawer()
-          },
-              icon: const Icon(Icons.search),color:Colors.blueGrey,),
-            IconButton(onPressed: () {},
-                icon: Icon(Icons.notifications_off),color:Colors.blueGrey,),
-          ],
-      ),
+      appBar: const CustomAppBar(title: 'Ikenna O.'),
       //drawer:buildDrawer(context),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -94,9 +60,9 @@ class HomePageState extends State<HomePage>
             ),
             const SizedBox(height: 10),
           Padding(
-            padding:const EdgeInsets.all(8),
+            padding:const EdgeInsets.all(5),
             child: SizedBox(height: 300,
-              width:500,
+              width:double.infinity,
               child:Card(
                 elevation:2,
                 shape:RoundedRectangleBorder(
@@ -119,7 +85,7 @@ class HomePageState extends State<HomePage>
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                       fixedSize: const Size(400,50),
+                       fixedSize: const Size(double.maxFinite,50),
                         backgroundColor: Colors.lightGreen,
                         shape:const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20))
