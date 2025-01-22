@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:login_register_app/screens/results.dart';
 import 'package:login_register_app/screens/search.dart';
+import 'package:login_register_app/screens/subjects.dart';
 
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
@@ -38,6 +40,10 @@ class Routes {
 
       case AppRoutes.search :
         return getRoute(widget: const SearchScreen());
+      case AppRoutes.result:
+        return getRoute(widget: const ResultScreen());
+      case AppRoutes.subject:
+        return getRoute(widget: const SubjectPage());
 
 
 

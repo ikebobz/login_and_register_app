@@ -6,4 +6,6 @@ class AppRoutes {
   static const String home = 'home';
   static const String splash = 'splash';
   static const String search = 'search';
+  static const String result = 'result';
+  static const String subject = 'subject';
 }

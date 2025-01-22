@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_register_app/screens/customappbar.dart';
+import 'package:login_register_app/screens/search.dart';
+import 'package:login_register_app/utils/helpers/navigation_helper.dart';
+import 'package:login_register_app/values/app_routes.dart';
 
 class HomePage extends StatefulWidget
 {
@@ -20,7 +23,7 @@ class HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffold_key,
-      appBar: const CustomAppBar(title: 'Ikenna O.'),
+      appBar: CustomAppBar(title: 'Ikenna O.',type: 0),
       //drawer:buildDrawer(context),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -29,11 +32,11 @@ class HomePageState extends State<HomePage>
             scrollDirection: Axis.horizontal,
             child: Row(
               children: <Widget>[
-                _buildCard('assets/images/search.png', 'Search Questions'),
+                _buildCard('assets/images/search.png', 'Search Questions',0),
                 const SizedBox(width: 10), // Space between cards
-                _buildCard('assets/images/browse.png', 'Browse Questions By Topic'),
+                _buildCard('assets/images/browse.png', 'Browse Questions By Topic',1),
                 const SizedBox(width: 10),
-                _buildCard('assets/images/challenge.png', 'Challenge Answer'),
+                _buildCard('assets/images/challenge.png', 'Challenge Answer',2),
                 const SizedBox(width: 10),
               ],
             ),
@@ -104,34 +107,11 @@ class HomePageState extends State<HomePage>
           ),],
         ),
       ),
-        bottomNavigationBar:
-        BottomNavigationBar(
-          items:const [
-            BottomNavigationBarItem(icon:
-            Icon(Icons.home),
-              label:'Home',),
-            BottomNavigationBarItem(icon:
-            Icon(Icons.settings),
-              label:'Settings',),
-            BottomNavigationBarItem(icon:
-            Icon(Icons.info_outline),
-              label:'About Us',),
-            BottomNavigationBarItem(icon:
-            Icon(Icons.logout,),
-              label:'Log Out',
-            )],
-          //currentIndex:_selectedIndex,
-          //onTap:_onItemTapped,
-          showUnselectedLabels:false, // Hides labels for unselected items
-          type : BottomNavigationBarType.fixed, // Fixed type for better design.
-          backgroundColor : Colors.white, // Custom background color.
-          selectedFontSize :16,// Size of selected font.
-          unselectedFontSize :14,// Size of un-selected font.
-        ),
+        bottomNavigationBar: CustomAppBar(title: 'Ikenna O.', type: 2),
        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-  Widget _buildCard(String imageUrl, String title) {
+  Widget _buildCard(String imageUrl, String title, int action) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 1,
@@ -142,7 +122,14 @@ class HomePageState extends State<HomePage>
         padding:const EdgeInsets.symmetric(vertical: 3,horizontal: 3),
         backgroundColor: Colors.lightGreen,
          ),
-      onPressed: () {},
+      onPressed: () {
+        switch (action)
+            {
+          case 0: NavigationHelper.pushNamed(AppRoutes.search);
+          case 1: NavigationHelper.pushNamed(AppRoutes.subject);
+        }
+
+      },
       child:
       Column(mainAxisSize : MainAxisSize.min, children : <Widget>[
         ClipRRect( // Makes rounded corners for the image as well.

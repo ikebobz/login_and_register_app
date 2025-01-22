@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_register_app/screens/customappbar.dart';
+import 'package:login_register_app/utils/helpers/navigation_helper.dart';
+import 'package:login_register_app/values/app_routes.dart';
 
 
 
@@ -73,7 +75,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Ikenna O.'),
+      appBar: CustomAppBar(title: 'Ikenna O.',type: 0,),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -108,7 +110,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   child:IconButton(
                   icon: const Icon(Icons.search_outlined),
                   iconSize: 30,
-                  onPressed: () => _performSearch(_searchController.text),
+                  onPressed: () => NavigationHelper.pushNamed(AppRoutes.result),
+                    //_performSearch(_searchController.text),
                 ),
                 ),
               ],
@@ -119,16 +122,26 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: ListView.builder(
                   itemCount: _searchHistory.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
+                    return DecoratedBox(
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                        border:Border.all(
+                          color: Colors.black12,
+                          width: 0.5,
+                        ),
+                      ),
+                      child: ListTile(
+                       leading:const Icon(Icons.history),
                       title: Text(_searchHistory[index]),
                       onTap: () {
                         _searchController.text = _searchHistory[index];
                         _performSearch(_searchHistory[index]);
                       },
-                    );
+                    ),);
                   },
                 ),
               ),
+            
             //const SizedBox(height: 20),
 
             // Search Button
@@ -152,6 +165,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: CustomAppBar(title: '', type: 2),
     );
   }
 }
