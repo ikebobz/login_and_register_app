@@ -51,7 +51,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         currentIndex: _selectedIndex,
         onTap: (index){
           _selectedIndex = index;
-          NavigationHelper.pop();
+          if(index == 4) {
+            NavigationHelper.pop();
+          }
+          else if(index == 0)
+            {
+              NavigationHelper.pushNamed(AppRoutes.home);
+            }
+          else if(index == 3)
+            {
+              NavigationHelper.pushNamed(AppRoutes.login);
+            }
         },
         items:const [
         BottomNavigationBarItem(icon:

@@ -149,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: isValid
                             ? () {
                                 NavigationHelper
-                                    .pushReplacementNamed(AppRoutes.home);
+                                    .pushNamed(AppRoutes.home);
                                 SnackbarHelper.showSnackBar(
                                   AppStrings.loggedIn,
                                 );

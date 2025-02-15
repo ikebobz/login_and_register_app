@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_register_app/screens/customappbar.dart';
-import 'package:login_register_app/screens/search.dart';
 import 'package:login_register_app/utils/helpers/navigation_helper.dart';
+import 'package:login_register_app/utils/messenger.dart';
 import 'package:login_register_app/values/app_routes.dart';
 
 
@@ -62,7 +62,8 @@ class SubjectPageState extends State<SubjectPage>
 
       ),
       onPressed: () {
-        // Add your button press logic here
+        Messenger.message = buttonText;
+        NavigationHelper.pushNamed(AppRoutes.questions);
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

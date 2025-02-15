@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:login_register_app/screens/questions.dart';
 import 'package:login_register_app/screens/results.dart';
 import 'package:login_register_app/screens/search.dart';
 import 'package:login_register_app/screens/subjects.dart';
+import 'package:login_register_app/screens/answer.dart';
 
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
@@ -44,6 +46,11 @@ class Routes {
         return getRoute(widget: const ResultScreen());
       case AppRoutes.subject:
         return getRoute(widget: const SubjectPage());
+      case AppRoutes.questions:
+           return getRoute(widget: const Questions());
+      case AppRoutes.answer:
+        return getRoute(widget: AnswerCard());
+
 
 
 
