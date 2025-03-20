@@ -10,4 +10,5 @@ class AppRoutes {
   static const String subject = 'subject';
   static const String questions = 'questions';
   static const String answer = 'answer';
+  static const String setting = 'setting';
 }

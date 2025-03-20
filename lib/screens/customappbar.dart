@@ -58,6 +58,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             {
               NavigationHelper.pushNamed(AppRoutes.home);
             }
+          else if(index == 1)
+          {
+            NavigationHelper.pushNamed(AppRoutes.setting);
+          }
           else if(index == 3)
             {
               NavigationHelper.pushNamed(AppRoutes.login);

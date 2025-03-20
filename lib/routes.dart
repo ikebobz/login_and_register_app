@@ -11,6 +11,7 @@ import 'utils/common_widgets/invalid_route.dart';
 import 'screens/home.dart';
 import 'values/app_routes.dart';
 import 'screens/splashscreen.dart';
+import 'screens/settings.dart';
 
 class Routes {
   const Routes._();//private constructor
@@ -50,6 +51,8 @@ class Routes {
            return getRoute(widget: const Questions());
       case AppRoutes.answer:
         return getRoute(widget: AnswerCard());
+      case AppRoutes.setting:
+        return getRoute(widget: const SettingsPage());
 
 
 
